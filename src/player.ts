@@ -8,6 +8,8 @@ class Player extends MagicSprite {
 
     this.body.drag.x = 4000;
     this.body.drag.y = 4000;
+
+    this.body.collideWorldBounds = true;
   }
 
   update() {

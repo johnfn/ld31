@@ -15,9 +15,6 @@ class G {
   static SCREEN_WIDTH:number = 640;
   static SCREEN_HEIGHT:number = 640;
 
-  static MAP_W:number = 500;
-  static MAP_H:number = 500;
-
   static game:Phaser.Game;
 }
 
@@ -35,7 +32,7 @@ class MainState extends Phaser.State {
   }
 
   public create():void {
-    G.game.world.setBounds(0, 0, G.MAP_W, G.MAP_H);
+    G.game.world.setBounds(0, 0, G.SCREEN_WIDTH, G.SCREEN_HEIGHT);
     G.cursors = G.game.input.keyboard.createCursorKeys();
 
     G.player = new Player();
