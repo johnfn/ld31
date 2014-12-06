@@ -22,6 +22,7 @@ var MainState = (function (_super) {
     MainState.prototype.preload = function () {
         // fw, fh, num frames,
         this.load.spritesheet("default", "assets/default.png", 32, 32);
+        this.load.tilemap("map", "assets/map.json", null, Phaser.Tilemap.TILED_JSON);
     };
     MainState.prototype.init = function () {
         G.game.stage.backgroundColor = "#356b92";
@@ -30,7 +31,6 @@ var MainState = (function (_super) {
         G.game.world.setBounds(0, 0, G.MAP_W, G.MAP_H);
         G.player = new Player();
         G.game.add.existing(G.player);
-        // G.game.add.sprite(25, 25, "default");
     };
     return MainState;
 })(Phaser.State);
