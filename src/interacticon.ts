@@ -4,6 +4,8 @@ class InteractIcon extends Phaser.Sprite {
   startX:number;
   startY:number;
 
+  tween:Phaser.Tween;
+
   target:MagicSprite;
 
   dumbcons() {
@@ -15,6 +17,18 @@ class InteractIcon extends Phaser.Sprite {
 
   update() {
 
+  }
+
+  startBounce() {
+    if (this.tween) {
+      this.tween.stop();
+    }
+
+    this.tween = G.game.add.tween(this)
+      .to({ x: this.startX, y: this.startY - 16 }, 300, Phaser.Easing.Power0)
+      .to({ x: this.startX, y: this.startY }, 300, Phaser.Easing.Power0)
+      .loop()
+      .start();
   }
 
   setTarget(target:MagicSprite) {
@@ -29,6 +43,8 @@ class InteractIcon extends Phaser.Sprite {
       this.y = this.startY;
 
       this.visible = true;
+
+      this.startBounce();
     }
 
     // no target any more?
