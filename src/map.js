@@ -23,8 +23,12 @@ var GameMap = (function (_super) {
                 continue;
             }
             var gid = this.objects[key][0].gid;
-            this.createFromObjects(key, gid, key, 0, true, true, group, TreasureChest);
+            this.createFromObjects(key, gid, key, 0, true, true, group, C.specialMapItems[key].type);
+            this.objectLayers[key] = group;
         }
     }
+    GameMap.prototype.getSpecialObjGroup = function (type) {
+        return this.objectLayers[type];
+    };
     return GameMap;
 })(Phaser.Tilemap);

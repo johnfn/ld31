@@ -29,7 +29,12 @@ class GameMap extends Phaser.Tilemap {
 
       var gid:number = this.objects[key][0].gid;
 
-      this.createFromObjects(key, gid, key, 0, true, true, group, TreasureChest);
+      this.createFromObjects(key, gid, key, 0, true, true, group, C.specialMapItems[key].type);
+      this.objectLayers[key] = group;
     }
+  }
+
+  public getSpecialObjGroup(type:string):Phaser.Group {
+    return this.objectLayers[type];
   }
 }

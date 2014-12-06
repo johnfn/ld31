@@ -7,8 +7,14 @@ class Depths {
 }
 
 interface SpecialMapItem {
-  id: number;
   type: typeof MagicSprite;
+  collideable: boolean;
+}
+
+class C {
+  static specialMapItems:{[key: string]: SpecialMapItem} = {
+    treasurechest: { type: TreasureChest, collideable: true }
+  };
 }
 
 class G {
@@ -16,10 +22,6 @@ class G {
   static map:GameMap;
 
   static cursors:Phaser.CursorKeys;
-
-  static specialMapItems:SpecialMapItem[] = [
-    { id: 2, type: TreasureChest }
-  ];
 
   static SCREEN_WIDTH:number = 640;
   static SCREEN_HEIGHT:number = 640;
@@ -58,6 +60,12 @@ class MainState extends Phaser.State {
     // (<any> this.game.physics.arcade).TILE_BIAS = 30;
 
     this.game.physics.arcade.collide(G.player, G.map.walls);
+
+    for (var key in C.specialMapItems) {
+      if (C.specialMapItems[key].collideable) {
+        this.game.physics.arcade.collide(G.player, G.map.getSpecialObjGroup(key));
+      }
+    }
   }
 }
 
