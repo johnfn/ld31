@@ -36,8 +36,16 @@ class Player extends MagicSprite {
     var interactTarget:MagicSprite = this.findNearestInteractable();
     G.interacticon.setTarget(interactTarget);
 
+    var asInteractable:Interactable = (<Interactable> (<any> interactTarget));
+
+    if (interactTarget) {
+      G.HUD.setInteractText(asInteractable.text());
+    } else {
+      G.HUD.setInteractText("do nothing");
+    }
+
     if (this.zkey.justDown) {
-      (<Interactable> (<any> interactTarget)).interact();
+      asInteractable.interact();
     }
   }
 }

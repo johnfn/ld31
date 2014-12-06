@@ -19,7 +19,11 @@ class TreasureChest extends MagicSprite implements Interactable {
     this.opened = true;
   }
 
-  canInteract() {
+  canInteract():boolean {
     return !this.opened;
+  }
+
+  text():string {
+    return "open treasure chest";
   }
 }

@@ -2,6 +2,6 @@
 
 interface Interactable {
   interact():void;
-
   canInteract():boolean;
+  text():string;
 }
