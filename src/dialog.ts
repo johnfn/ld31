@@ -11,6 +11,8 @@ class Dialog extends Phaser.Group {
   pressZText:Phaser.Text;
   content:DialogContent[];
 
+  zkey:Phaser.Key;
+
   updateEvery:number = 5;
   ticks:number = 0;
 
@@ -18,6 +20,8 @@ class Dialog extends Phaser.Group {
     super(G.game);
 
     this.content = content;
+
+    this.zkey = G.game.input.keyboard.addKey(Phaser.Keyboard.Z);
 
     this.x = 100;
     this.y = 400;
@@ -38,9 +42,20 @@ class Dialog extends Phaser.Group {
   }
 
   update() {
-    if (++this.ticks % this.updateEvery != 0) return;
+    console.log(this.zkey.isDown);
 
-    if (this.text.text != this.content[0].content) {
+    if (this.zkey.justDown && this.text.text === this.content[0].content) {
+      this.content.shift();
+
+      if (this.content.length === 0) {
+        this.destroy(true);
+      }
+
+      return;
+    }
+
+    if ((++this.ticks % this.updateEvery == 0 || this.zkey.isDown) &&
+        this.text.text != this.content[0].content) {
       this.text.setText(this.content[0].content.substring(0, this.text.text.length + 1));
     }
   }
