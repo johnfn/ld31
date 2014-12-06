@@ -1,5 +1,11 @@
 /// <reference path="refs.d.ts" />
 
+class Depths {
+  static BG:number = -100;
+  static WALLS:number = 0;
+  static PLAYER:number = 100;
+}
+
 class G {
   static player:Player;
   static map:GameMap;
@@ -30,13 +36,15 @@ class MainState extends Phaser.State {
 
   public create():void {
     G.game.world.setBounds(0, 0, G.MAP_W, G.MAP_H);
+    G.cursors = G.game.input.keyboard.createCursorKeys();
 
     G.player = new Player();
+    G.player.z = Depths.PLAYER;
     G.game.add.existing(G.player);
 
     G.map = new GameMap();
 
-    G.cursors = G.game.input.keyboard.createCursorKeys();
+    G.game.world.sort();
   }
 
   public update():void {

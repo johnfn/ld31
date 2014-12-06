@@ -9,6 +9,7 @@ Game:
 
  Stuff:
   ☐ Tiledmaps
-    ☐ Background
-    ☐ Walls (w/ collision)
+    ✔ Background @done (14-12-05 19:18)
+    ✔ Walls (w/ collision) @done (14-12-05 19:18)
+    ☐ z-ordering
   ☐ Make game larger resolution, for more space.
