@@ -1,4 +1,6 @@
 /// <reference path="main.ts" />
+/// <reference path="hud.ts" />
+/// <reference path="specialtext.ts" />
 /// <reference path="interactable.ts" />
 /// <reference path="interacticon.ts" />
 /// <reference path="map.ts" />

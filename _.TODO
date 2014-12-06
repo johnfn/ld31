@@ -21,9 +21,21 @@ Game:
   ✔ Trigger dialog when you walk up to the chest and press Z @done (14-12-06 01:45)
     ✔ Need to mark treasure chests as interactable @done (14-12-06 00:56)
     ✔ Interactable hoverover icon thing @done (14-12-06 01:31)
-    ☐ Need to mark treasure chests as not interactable any more.
+    ✔ Need to mark treasure chests as not interactable any more. @done (14-12-06 11:20)
   ☐ Treasure chest gives shrinking ability.
+  ☐ Need HUD
+    ☐ Need to say Z to interact
+    ☐ X to shrink
   ☐ Nested tilemap #1
+
+  Enemies:
+   ☐ You need a weapon.
+   ☐ exist
+     ☐ Dumb walking around
+     ☐ Stay still and shoot
+   ☐ Give golds
+   ☐ Give experience?
+   ☐ Levelling up?
 
   Generally:
    ☐ Better font
