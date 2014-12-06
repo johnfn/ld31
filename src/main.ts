@@ -12,8 +12,8 @@ class G {
 
   static cursors:Phaser.CursorKeys;
 
-  static SCREEN_WIDTH:number = 500;
-  static SCREEN_HEIGHT:number = 500;
+  static SCREEN_WIDTH:number = 640;
+  static SCREEN_HEIGHT:number = 640;
 
   static MAP_W:number = 500;
   static MAP_H:number = 500;

@@ -8,8 +8,10 @@ Game:
  ☐ Cam needs to be responsive and follow you
 
  Stuff:
-  ☐ Tiledmaps
+  ✔ Tiledmaps @done (14-12-05 19:25)
     ✔ Background @done (14-12-05 19:18)
     ✔ Walls (w/ collision) @done (14-12-05 19:18)
-    ☐ z-ordering
-  ☐ Make game larger resolution, for more space.
+    ✔ z-ordering @done (14-12-05 19:25)
+  ✔ Make game larger resolution, for more space. @done (14-12-05 19:28)
+  ☐ Player can't leave bounds
+  ☐ Nested tilemap #1
