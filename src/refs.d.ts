@@ -1,4 +1,5 @@
 /// <reference path="main.ts" />
+/// <reference path="interactable.ts" />
 /// <reference path="interacticon.ts" />
 /// <reference path="map.ts" />
 /// <reference path="dialog.ts" />

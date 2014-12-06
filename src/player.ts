@@ -33,7 +33,11 @@ class Player extends MagicSprite {
     if (G.cursors.up.isDown) this.body.velocity.y = -this.speed;
     if (G.cursors.down.isDown) this.body.velocity.y = this.speed;
 
-    var interact:Phaser.Sprite = this.findNearestInteractable();
-    G.interacticon.setTarget(this.findNearestInteractable());
+    var interactTarget:MagicSprite = this.findNearestInteractable();
+    G.interacticon.setTarget(interactTarget);
+
+    if (this.zkey.justDown) {
+      (<Interactable> (<any> interactTarget)).interact();
+    }
   }
 }
