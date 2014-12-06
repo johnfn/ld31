@@ -54,8 +54,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":768,
-                 "y":160
+                 "x":416,
+                 "y":320
                 }, 
                 {
                  "gid":3,
@@ -69,7 +69,7 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":704,
+                 "x":352,
                  "y":96
                 }],
          "opacity":1,

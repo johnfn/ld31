@@ -32,6 +32,7 @@ class MainState extends Phaser.State {
     // fw, fh, num frames,
     this.load.spritesheet("default", "assets/default.png", 32, 32);
     this.load.spritesheet("tileset", "assets/tileset.png", 32, 32);
+    this.load.spritesheet("treasurechest", "assets/treasurechest.png", 32, 32);
 
     this.load.tilemap("map", "assets/map.json", null, Phaser.Tilemap.TILED_JSON);
   }
