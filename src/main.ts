@@ -4,6 +4,7 @@ class Depths {
   static BG:number = -100;
   static WALLS:number = 0;
   static PLAYER:number = 100;
+  static DIALOG:number = 500;
 }
 
 interface SpecialMapItem {
@@ -34,6 +35,7 @@ class MainState extends Phaser.State {
     // fw, fh, num frames,
     this.load.spritesheet("default", "assets/default.png", 32, 32);
     this.load.spritesheet("tileset", "assets/tileset.png", 32, 32);
+    this.load.spritesheet("dialog", "assets/dialog.png", 400, 200);
     this.load.spritesheet("treasurechest", "assets/treasurechest.png", 32, 32);
 
     this.load.tilemap("map", "assets/map.json", null, Phaser.Tilemap.TILED_JSON);
@@ -54,6 +56,11 @@ class MainState extends Phaser.State {
     G.map = new GameMap();
 
     G.game.world.sort();
+
+    var d:Dialog = new Dialog();
+    d.z = Depths.DIALOG;
+
+    G.game.add.existing(d);
   }
 
   public update():void {

@@ -1,5 +1,6 @@
 /// <reference path="main.ts" />
 /// <reference path="map.ts" />
+/// <reference path="dialog.ts" />
 /// <reference path="magicsprite.ts" />
 /// <reference path="player.ts" />
 /// <reference path="treasurechest.ts" />
