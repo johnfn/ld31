@@ -4,6 +4,8 @@ class G {
   static player:Player;
   static map:GameMap;
 
+  static cursors:Phaser.CursorKeys;
+
   static SCREEN_WIDTH:number = 500;
   static SCREEN_HEIGHT:number = 500;
 
@@ -33,6 +35,8 @@ class MainState extends Phaser.State {
     G.game.add.existing(G.player);
 
     G.map = new GameMap();
+
+    G.cursors = G.game.input.keyboard.createCursorKeys();
   }
 }
 
