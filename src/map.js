@@ -30,5 +30,14 @@ var GameMap = (function (_super) {
     GameMap.prototype.getSpecialObjGroup = function (type) {
         return this.objectLayers[type];
     };
+    GameMap.prototype.getInteractables = function () {
+        var result = [];
+        for (var key in this.objectLayers) {
+            if (C.specialMapItems[key].interactable) {
+                result.push(this.objectLayers[key]);
+            }
+        }
+        return result;
+    };
     return GameMap;
 })(Phaser.Tilemap);

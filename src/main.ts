@@ -10,11 +10,12 @@ class Depths {
 interface SpecialMapItem {
   type: typeof MagicSprite;
   collideable: boolean;
+  interactable?: boolean;
 }
 
 class C {
   static specialMapItems:{[key: string]: SpecialMapItem} = {
-    treasurechest: { type: TreasureChest, collideable: true }
+    treasurechest: { type: TreasureChest, collideable: true, interactable: true }
   };
 }
 
@@ -28,6 +29,26 @@ class G {
   static SCREEN_HEIGHT:number = 640;
 
   static game:Phaser.Game;
+}
+
+class Util {
+  static nearestInGroupsToSprite(groups:Phaser.Group[], sprite:Phaser.Sprite):Phaser.Sprite {
+    var bestDist:number = Number.POSITIVE_INFINITY;
+    var nearestSprite:Phaser.Sprite = undefined;
+
+    for (var i = 0; i < groups.length; i++) {
+      groups[i].forEach((s:Phaser.Sprite) => {
+        var dist:number = Phaser.Math.distance(sprite.x, sprite.y, s.x, s.y);
+
+        if (dist < bestDist) {
+          bestDist = dist;
+          nearestSprite = s;
+        }
+      }, undefined);
+    }
+
+    return nearestSprite;
+  }
 }
 
 class MainState extends Phaser.State {

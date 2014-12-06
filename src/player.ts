@@ -2,6 +2,7 @@
 
 class Player extends MagicSprite {
   speed:number = 400;
+  zkey:Phaser.Key;
 
   constructor() {
     super(G.game, 50, 50, "default");
@@ -10,6 +11,14 @@ class Player extends MagicSprite {
     this.body.drag.y = 4000;
 
     this.body.collideWorldBounds = true;
+
+    this.zkey = G.game.input.keyboard.addKey(Phaser.Keyboard.Z);
+  }
+
+  findNearestInteractable():MagicSprite {
+    var interactables:Phaser.Group[] = G.map.getInteractables();
+    return Util.nearestInGroupsToSprite(interactables, this);
+
   }
 
   update() {
@@ -18,5 +27,7 @@ class Player extends MagicSprite {
 
     if (G.cursors.up.isDown) this.body.velocity.y = -this.speed;
     if (G.cursors.down.isDown) this.body.velocity.y = this.speed;
+
+    console.log(this.findNearestInteractable());
   }
 }

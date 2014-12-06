@@ -17,6 +17,8 @@ Game:
   ✔ Player finds treasure chest. @done (14-12-05 22:59)
     ✔ Special items @done (14-12-05 22:59)
     ✔ Groups @done (14-12-05 22:59)
-  ☐ Dialog
+  ✔ Dialog @done (14-12-05 23:34)
+  ☐ Trigger dialog when you walk up to the chest and press Z
+    ☐ Need to mark treasure chests as interactable
   ☐ Treasure chest gives shrinking ability.
   ☐ Nested tilemap #1

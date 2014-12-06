@@ -37,4 +37,16 @@ class GameMap extends Phaser.Tilemap {
   public getSpecialObjGroup(type:string):Phaser.Group {
     return this.objectLayers[type];
   }
+
+  public getInteractables():Phaser.Group[] {
+    var result:Phaser.Group[] = [];
+
+    for (var key in this.objectLayers) {
+      if (C.specialMapItems[key].interactable) {
+        result.push(this.objectLayers[key]);
+      }
+    }
+
+    return result;
+  }
 }

@@ -20,7 +20,6 @@ class Dialog extends Phaser.Group {
     super(G.game);
 
     this.content = content;
-
     this.zkey = G.game.input.keyboard.addKey(Phaser.Keyboard.Z);
 
     this.x = 100;
@@ -42,8 +41,6 @@ class Dialog extends Phaser.Group {
   }
 
   update() {
-    console.log(this.zkey.isDown);
-
     if (this.zkey.justDown && this.text.text === this.content[0].content) {
       this.content.shift();
 
