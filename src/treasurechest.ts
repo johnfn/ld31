@@ -5,9 +5,14 @@ class TreasureChest extends MagicSprite implements Interactable {
     super(a, b, c, "treasurechest", 1);
 
     this.body.immovable = true;
+
+    this.animations.add('closed', [0]);
+    this.animations.add('open', [1]);
   }
 
   interact() {
     Dialog.makeMeADialogPlease(DialogCopy.OpenTreasureChest);
+
+    this.animations.play('open');
   }
 }

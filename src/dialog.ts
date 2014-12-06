@@ -48,6 +48,7 @@ class Dialog extends Phaser.Group {
 
   static makeMeADialogPlease(content:DialogContent[]) {
     var d:Dialog = new Dialog(_.clone(content));
+
     d.z = Depths.DIALOG;
     G.game.add.existing(d);
   }
