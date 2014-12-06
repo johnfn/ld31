@@ -5,6 +5,14 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
+var Player = (function (_super) {
+    __extends(Player, _super);
+    function Player() {
+        _super.call(this, G.game, 50, 50, "default");
+    }
+    return Player;
+})(Phaser.Sprite);
+/// <reference path="refs.d.ts" />
 var G = (function () {
     function G() {
     }

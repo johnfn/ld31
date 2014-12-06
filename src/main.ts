@@ -1,6 +1,8 @@
 /// <reference path="refs.d.ts" />
 
 class G {
+  static player:Player;
+
   static SCREEN_WIDTH:number = 500;
   static SCREEN_HEIGHT:number = 500;
 
@@ -11,10 +13,10 @@ class G {
 }
 
 class MainState extends Phaser.State {
-    public preload():void {
-      // fw, fh, num frames,
-      this.load.spritesheet("default", "assets/default.png", 32, 32);
-    }
+  public preload():void {
+    // fw, fh, num frames,
+    this.load.spritesheet("default", "assets/default.png", 32, 32);
+  }
 
   public init():void {
     G.game.stage.backgroundColor = "#356b92";
@@ -23,7 +25,12 @@ class MainState extends Phaser.State {
   public create():void {
     G.game.world.setBounds(0, 0, G.MAP_W, G.MAP_H);
 
-    G.game.add.sprite(25, 25, "default");
+    G.player = new Player();
+
+    G.game.add.existing(G.player);
+
+
+    // G.game.add.sprite(25, 25, "default");
   }
 }
 

@@ -1,0 +1,6 @@
+Game:
+ ☐ Topdown for sanity.
+ ☐ Need nested maps in Tiled
+ ☐ Need some way to load that in
+ ☐ Need some sort of shrinking/expanding ability
+ ☐ Cam needs to be responsive and follow you
