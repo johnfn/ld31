@@ -34,19 +34,18 @@ class G {
 }
 
 class Util {
-  static nearestInGroupsToSprite(groups:Phaser.Group[], sprite:Phaser.Sprite):Phaser.Sprite {
+  static nearestInListToSprite(list:Phaser.Sprite[], sprite:Phaser.Sprite):Phaser.Sprite {
     var bestDist:number = Number.POSITIVE_INFINITY;
     var nearestSprite:Phaser.Sprite = undefined;
 
-    for (var i = 0; i < groups.length; i++) {
-      groups[i].forEach((s:Phaser.Sprite) => {
-        var dist:number = Phaser.Math.distance(sprite.x, sprite.y, s.x, s.y);
+    for (var i = 0; i < list.length; i++) {
+      var s:Phaser.Sprite = list[i];
+      var dist:number = Phaser.Math.distance(sprite.x, sprite.y, s.x, s.y);
 
-        if (dist < bestDist) {
-          bestDist = dist;
-          nearestSprite = s;
-        }
-      }, undefined);
+      if (dist < bestDist) {
+        bestDist = dist;
+        nearestSprite = s;
+      }
     }
 
     return nearestSprite;

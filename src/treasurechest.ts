@@ -1,6 +1,8 @@
 /// <reference path="refs.d.ts" />
 
 class TreasureChest extends MagicSprite implements Interactable {
+  opened:boolean = false;
+
   constructor(a:Phaser.Game, b:number, c:number, d:string, e:number) {
     super(a, b, c, "treasurechest", 1);
 
@@ -14,5 +16,10 @@ class TreasureChest extends MagicSprite implements Interactable {
     Dialog.makeMeADialogPlease(DialogCopy.OpenTreasureChest);
 
     this.animations.play('open');
+    this.opened = true;
+  }
+
+  canInteract() {
+    return !this.opened;
   }
 }

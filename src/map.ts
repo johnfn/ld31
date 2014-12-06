@@ -38,12 +38,18 @@ class GameMap extends Phaser.Tilemap {
     return this.objectLayers[type];
   }
 
-  public getInteractables():Phaser.Group[] {
-    var result:Phaser.Group[] = [];
+  public getInteractables():Phaser.Sprite[] {
+    var result:Phaser.Sprite[] = [];
 
     for (var key in this.objectLayers) {
       if (C.specialMapItems[key].interactable) {
-        result.push(this.objectLayers[key]);
+        var group:Phaser.Group = this.objectLayers[key];
+
+        group.forEach((s:any) => {
+          if ((<Interactable> s).canInteract()) {
+            result.push(s);
+          }
+        }, this);
       }
     }
 

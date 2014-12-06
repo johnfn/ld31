@@ -34,7 +34,12 @@ var GameMap = (function (_super) {
         var result = [];
         for (var key in this.objectLayers) {
             if (C.specialMapItems[key].interactable) {
-                result.push(this.objectLayers[key]);
+                var group = this.objectLayers[key];
+                group.forEach(function (s) {
+                    if (s.canInteract()) {
+                        result.push(s);
+                    }
+                }, this);
             }
         }
         return result;
