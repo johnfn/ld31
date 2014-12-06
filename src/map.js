@@ -16,23 +16,15 @@ var GameMap = (function (_super) {
         this.bg.z = Depths.BG;
         this.walls = this.createLayer('walls');
         this.walls.z = Depths.WALLS;
-        var group = G.game.add.group();
-        this.createFromObjects("treasurechest", 3, "treasurechest", 0, true, true, group, TreasureChest);
-        /*
         for (var key in this.objects) {
-          var group:Phaser.Group = G.game.add.group();
-    
-          if (this.objects[key].length == 0) {
-            console.log("layer ", key, " is empty. ;/");
-    
-            continue;
-          }
-    
-          var gid:number = this.objects[key][0].gid;
-    
-          this.createFromObjects(key, gid, "tileset", 0, true, false, group, TreasureChest);
+            var group = G.game.add.group();
+            if (this.objects[key].length == 0) {
+                console.log("layer ", key, " is empty. ;/");
+                continue;
+            }
+            var gid = this.objects[key][0].gid;
+            this.createFromObjects(key, gid, key, 0, true, true, group, TreasureChest);
         }
-        */
     }
     return GameMap;
 })(Phaser.Tilemap);
