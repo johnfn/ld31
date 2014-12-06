@@ -8,6 +8,6 @@ class TreasureChest extends MagicSprite implements Interactable {
   }
 
   interact() {
-    console.log('whaoah');
+    Dialog.makeMeADialogPlease(DialogCopy.OpenTreasureChest);
   }
 }

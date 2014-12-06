@@ -5,6 +5,12 @@ interface DialogContent {
   content: string;
 }
 
+class DialogCopy {
+  static OpenTreasureChest:DialogContent[] = [
+    { speaker: "me", content: "wow, treasure! ;O" }
+  ];
+}
+
 class Dialog extends Phaser.Group {
   graphic:Phaser.Sprite;
   text:Phaser.Text;
@@ -38,6 +44,12 @@ class Dialog extends Phaser.Group {
 
     this.pressZText = new Phaser.Text(G.game, 10, 180, "Press Z to continue", textStyle);
     this.add(this.pressZText);
+  }
+
+  static makeMeADialogPlease(content:DialogContent[]) {
+    var d:Dialog = new Dialog(_.clone(content));
+    d.z = Depths.DIALOG;
+    G.game.add.existing(d);
   }
 
   update() {

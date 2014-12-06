@@ -84,15 +84,6 @@ class MainState extends Phaser.State {
     G.map = new GameMap();
 
     G.game.world.sort();
-
-    var d:Dialog = new Dialog([
-      { speaker: "me", content: "wat up"},
-      { speaker: "you", content: "suuuuuup wo wo wo wooowow!"},
-    ]);
-
-    d.z = Depths.DIALOG;
-
-    G.game.add.existing(d);
   }
 
   public update():void {
