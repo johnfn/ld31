@@ -5,6 +5,7 @@ class Depths {
   static WALLS:number = 0;
   static PLAYER:number = 100;
   static INTERACT_ICON:number = 200;
+  static HUD:number = 400;
   static DIALOG:number = 500;
 }
 
@@ -24,6 +25,7 @@ class G {
   static player:Player;
   static map:GameMap;
   static interacticon:InteractIcon;
+  static HUD:HUD;
 
   static cursors:Phaser.CursorKeys;
 
@@ -79,6 +81,10 @@ class MainState extends Phaser.State {
     G.interacticon = new InteractIcon(G.game, 0, 0, "interact");
     G.interacticon.z = Depths.INTERACT_ICON;
     G.game.add.existing(G.interacticon);
+
+    G.HUD = new HUD();
+    G.HUD.z = Depths.HUD;
+    G.game.add.existing(G.HUD);
 
     G.map = new GameMap();
 

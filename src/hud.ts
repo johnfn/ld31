@@ -5,8 +5,8 @@ class HUD extends Phaser.Group {
   shrinkText:SpecialText;
   growText:SpecialText;
 
-  constructor(g:Phaser.Game) {
-    super(g);
+  constructor() {
+    super(G.game);
 
     this.interactText = new SpecialText(10, 10, "Z: nothing");
   }
