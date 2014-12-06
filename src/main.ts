@@ -6,11 +6,20 @@ class Depths {
   static PLAYER:number = 100;
 }
 
+interface SpecialMapItem {
+  id: number;
+  type: typeof MagicSprite;
+}
+
 class G {
   static player:Player;
   static map:GameMap;
 
   static cursors:Phaser.CursorKeys;
+
+  static specialMapItems:SpecialMapItem[] = [
+    { id: 2, type: TreasureChest }
+  ];
 
   static SCREEN_WIDTH:number = 640;
   static SCREEN_HEIGHT:number = 640;

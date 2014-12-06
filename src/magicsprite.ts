@@ -3,8 +3,8 @@
 class MagicSprite extends Phaser.Sprite {
   body:Phaser.Physics.Arcade.Body;
 
-  constructor(a:Phaser.Game, b:number, c:number, d:string) {
-    super(a, b, c, d);
+  constructor(a:Phaser.Game, b:number, c:number, d:string, e:number) {
+    super(a, b, c, d, e);
 
     G.game.physics.arcade.enable(this);
   }

@@ -13,5 +13,10 @@ Game:
     ✔ Walls (w/ collision) @done (14-12-05 19:18)
     ✔ z-ordering @done (14-12-05 19:25)
   ✔ Make game larger resolution, for more space. @done (14-12-05 19:28)
-  ☐ Player can't leave bounds
+  ✔ Player can't leave bounds @done (14-12-05 19:31)
+  ☐ Player finds treasure chest.
+    ☐ Special items
+    ☐ Groups
+  ☐ Dialog
+  ☐ Treasure chest gives shrinking ability.
   ☐ Nested tilemap #1

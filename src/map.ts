@@ -4,6 +4,8 @@ class GameMap extends Phaser.Tilemap {
   walls:Phaser.TilemapLayer;
   bg:Phaser.TilemapLayer;
 
+  objectLayers:{[key: string]: Phaser.Group} = {};
+
   constructor() {
     super(G.game, "map");
 
@@ -15,5 +17,25 @@ class GameMap extends Phaser.Tilemap {
 
     this.walls = this.createLayer('walls');
     this.walls.z = Depths.WALLS;
+
+    var group:Phaser.Group = G.game.add.group();
+
+    this.createFromObjects("treasurechest", 3, "tileset", 0, true, true, G.game.world, TreasureChest);
+
+    /*
+    for (var key in this.objects) {
+      var group:Phaser.Group = G.game.add.group();
+
+      if (this.objects[key].length == 0) {
+        console.log("layer ", key, " is empty. ;/");
+
+        continue;
+      }
+
+      var gid:number = this.objects[key][0].gid;
+
+      this.createFromObjects(key, gid, "tileset", 0, true, false, group, TreasureChest);
+    }
+    */
   }
 }
