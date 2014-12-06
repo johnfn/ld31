@@ -17,8 +17,15 @@ class Player extends MagicSprite {
 
   findNearestInteractable():MagicSprite {
     var interactables:Phaser.Group[] = G.map.getInteractables();
-    return Util.nearestInGroupsToSprite(interactables, this);
+    var nearest:Phaser.Sprite = Util.nearestInGroupsToSprite(interactables, this);
 
+    if (Phaser.Math.distance(this.x, this.y, nearest.x, nearest.y) < 100) {
+      console.log('ding');
+
+      return <MagicSprite> nearest;
+    }
+
+    return undefined;
   }
 
   update() {
@@ -28,6 +35,6 @@ class Player extends MagicSprite {
     if (G.cursors.up.isDown) this.body.velocity.y = -this.speed;
     if (G.cursors.down.isDown) this.body.velocity.y = this.speed;
 
-    console.log(this.findNearestInteractable());
+    var interact:Phaser.Sprite = this.findNearestInteractable();
   }
 }

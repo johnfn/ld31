@@ -7,5 +7,12 @@ class MagicSprite extends Phaser.Sprite {
     super(a, b, c, d, e);
 
     G.game.physics.arcade.enable(this);
+
+    this.dumbcons();
+  }
+
+  // to be overridden; i'm too lazy to figure out wat all the friggin args are
+  dumbcons() {
+
   }
 }

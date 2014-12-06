@@ -4,6 +4,7 @@ class Depths {
   static BG:number = -100;
   static WALLS:number = 0;
   static PLAYER:number = 100;
+  static INTERACT_ICON:number = 200;
   static DIALOG:number = 500;
 }
 
@@ -22,6 +23,7 @@ class C {
 class G {
   static player:Player;
   static map:GameMap;
+  static interacticon:InteractIcon;
 
   static cursors:Phaser.CursorKeys;
 
@@ -57,6 +59,7 @@ class MainState extends Phaser.State {
     this.load.spritesheet("default", "assets/default.png", 32, 32);
     this.load.spritesheet("tileset", "assets/tileset.png", 32, 32);
     this.load.spritesheet("dialog", "assets/dialog.png", 400, 200);
+    this.load.spritesheet("interact", "assets/interact.png", 400, 200);
     this.load.spritesheet("treasurechest", "assets/treasurechest.png", 32, 32);
 
     this.load.tilemap("map", "assets/map.json", null, Phaser.Tilemap.TILED_JSON);
@@ -73,6 +76,10 @@ class MainState extends Phaser.State {
     G.player = new Player();
     G.player.z = Depths.PLAYER;
     G.game.add.existing(G.player);
+
+    G.interacticon = new InteractIcon(G.game, 0, 0, "interact");
+    G.interacticon.z = Depths.INTERACT_ICON;
+    G.game.add.existing(G.interacticon);
 
     G.map = new GameMap();
 
