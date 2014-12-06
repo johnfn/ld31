@@ -20,8 +20,6 @@ class Player extends MagicSprite {
     var nearest:Phaser.Sprite = Util.nearestInGroupsToSprite(interactables, this);
 
     if (Phaser.Math.distance(this.x, this.y, nearest.x, nearest.y) < 100) {
-      console.log('ding');
-
       return <MagicSprite> nearest;
     }
 
@@ -36,5 +34,6 @@ class Player extends MagicSprite {
     if (G.cursors.down.isDown) this.body.velocity.y = this.speed;
 
     var interact:Phaser.Sprite = this.findNearestInteractable();
+    G.interacticon.setTarget(this.findNearestInteractable());
   }
 }
