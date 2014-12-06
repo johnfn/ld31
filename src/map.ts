@@ -5,6 +5,8 @@ class GameMap extends Phaser.Tilemap {
     super(G.game, "map");
 
     this.addTilesetImage("tileset", "tileset", 32, 32);
-    this.setCollisionBetween(1, 1000, true, "collision");
+    this.setCollisionBetween(1, 1000, true, "main");
+
+    this.createLayer('main');
   }
 }

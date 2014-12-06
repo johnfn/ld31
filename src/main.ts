@@ -2,6 +2,7 @@
 
 class G {
   static player:Player;
+  static map:GameMap;
 
   static SCREEN_WIDTH:number = 500;
   static SCREEN_HEIGHT:number = 500;
@@ -16,6 +17,7 @@ class MainState extends Phaser.State {
   public preload():void {
     // fw, fh, num frames,
     this.load.spritesheet("default", "assets/default.png", 32, 32);
+    this.load.spritesheet("tileset", "assets/tileset.png", 32, 32);
 
     this.load.tilemap("map", "assets/map.json", null, Phaser.Tilemap.TILED_JSON);
   }
@@ -29,6 +31,8 @@ class MainState extends Phaser.State {
 
     G.player = new Player();
     G.game.add.existing(G.player);
+
+    G.map = new GameMap();
   }
 }
 
