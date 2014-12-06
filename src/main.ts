@@ -38,6 +38,12 @@ class MainState extends Phaser.State {
 
     G.cursors = G.game.input.keyboard.createCursorKeys();
   }
+
+  public update():void {
+    // (<any> this.game.physics.arcade).TILE_BIAS = 30;
+
+    this.game.physics.arcade.collide(G.player, G.map.walls);
+  }
 }
 
 class Game {

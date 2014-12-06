@@ -1,6 +1,14 @@
 Game:
  ☐ Topdown for sanity.
+ ☐ Main screen should be bigger heh
+ ☐ Imagine cannons that shoot normal sized balls... except when you zoom in, SUDDENLY GIGANTIC OH CRAP!
  ☐ Need nested maps in Tiled
  ☐ Need some way to load that in
  ☐ Need some sort of shrinking/expanding ability
  ☐ Cam needs to be responsive and follow you
+
+ Stuff:
+  ☐ Tiledmaps
+    ☐ Background
+    ☐ Walls (w/ collision)
+  ☐ Make game larger resolution, for more space.

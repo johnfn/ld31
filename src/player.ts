@@ -1,10 +1,13 @@
 /// <reference path="refs.d.ts" />
 
 class Player extends MagicSprite {
-  speed:number = 100;
+  speed:number = 400;
 
   constructor() {
     super(G.game, 50, 50, "default");
+
+    this.body.drag.x = 4000;
+    this.body.drag.y = 4000;
   }
 
   update() {

@@ -10,8 +10,9 @@ var GameMap = (function (_super) {
     function GameMap() {
         _super.call(this, G.game, "map");
         this.addTilesetImage("tileset", "tileset", 32, 32);
-        this.setCollisionBetween(1, 1000, true, "main");
-        this.createLayer('main');
+        this.setCollisionBetween(1, 200, true, "walls");
+        this.bg = this.createLayer('bg');
+        this.walls = this.createLayer('walls');
     }
     return GameMap;
 })(Phaser.Tilemap);
