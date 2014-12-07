@@ -4,7 +4,7 @@ class TreasureChest extends MagicSprite implements Interactable {
   opened:boolean = false;
 
   constructor(a:Phaser.Game, b:number, c:number, d:string, e:number) {
-    super(a, b, c, "treasurechest", 1);
+    super(a, b, c, "treasurechest", 0);
 
     this.body.immovable = true;
 

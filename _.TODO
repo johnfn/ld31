@@ -23,8 +23,9 @@ Game:
     ✔ Interactable hoverover icon thing @done (14-12-06 01:31)
     ✔ Need to mark treasure chests as not interactable any more. @done (14-12-06 11:20)
   ☐ Treasure chest gives shrinking ability.
-  ☐ Need HUD
-    ☐ Need to say Z to interact
+  ✔ Need HUD @done (14-12-06 11:36)
+    ✔ Need to say Z to interact @done (14-12-06 11:36)
+    ☐ Need to flash when change
     ☐ X to shrink
   ☐ Nested tilemap #1
 

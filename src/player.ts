@@ -19,6 +19,10 @@ class Player extends MagicSprite {
     var interactables:Phaser.Sprite[] = G.map.getInteractables();
     var nearest:Phaser.Sprite = Util.nearestInListToSprite(interactables, this);
 
+    if (!nearest) {
+      return undefined;
+    }
+
     if (Phaser.Math.distance(this.x, this.y, nearest.x, nearest.y) < 100) {
       return <MagicSprite> nearest;
     }
@@ -40,12 +44,12 @@ class Player extends MagicSprite {
 
     if (interactTarget) {
       G.HUD.setInteractText(asInteractable.text());
+
+      if (this.zkey.justDown) {
+        asInteractable.interact();
+      }
     } else {
       G.HUD.setInteractText("do nothing");
-    }
-
-    if (this.zkey.justDown) {
-      asInteractable.interact();
     }
   }
 }
